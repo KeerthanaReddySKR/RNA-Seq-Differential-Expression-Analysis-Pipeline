@@ -2,7 +2,7 @@
 
 This project implements a complete RNA-Seq analysis pipeline starting from raw sequencing data to biological insights using differential gene expression analysis.
 
-## 📌 Overview
+## Overview
 This pipeline includes:
 - Data retrieval from NCBI SRA
 - Quality control (FastQC)
@@ -10,11 +10,11 @@ This pipeline includes:
 - Differential expression analysis (DESeq2)
 - Visualization (Volcano plot, PCA, Heatmap)
 
-## 🧬 Dataset
+## Dataset
 - SRA Accession: SRR957824, SRR5924196
 - Data retrieved using SRA Toolkit
 
-## ⚙️ Pipeline Steps
+## Pipeline Steps
 
 ### 1. Data Retrieval
 - Tool: SRA Toolkit
@@ -37,21 +37,20 @@ This pipeline includes:
   - Upregulated genes
   - Downregulated genes
 
-## 📊 Results
+## Results
 
 - Volcano Plot → Significant DEGs
 - PCA Plot → Sample clustering
 - Heatmap → Gene expression patterns
 
-## 🧠 Key Insights
+## Key Insights
 - Clear separation between conditions in PCA
 - Significant DEGs identified using statistical thresholds
 
-## 🛠 Tech Stack
+## Tech Stack
 - R (DESeq2)
 - Python (optional processing)
 - FastQC
 - Trimmomatic
 
-## 🚀 Status
-Ongoing – being extended toward publication-level analysis
+
