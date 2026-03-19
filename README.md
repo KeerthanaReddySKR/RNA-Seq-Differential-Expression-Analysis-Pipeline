@@ -18,13 +18,27 @@ The pipeline integrates data acquisition, quality assessment, preprocessing, and
 
 ---
 
+## Computational Environment
+
+All analyses were performed in a Linux-based environment using command-line tools and scripting.
+
+* Operating System: Linux
+* Tools executed via terminal (SRA Toolkit, FastQC, Trimmomatic)
+* Workflow implemented using shell commands and R scripts
+* Data handling and preprocessing performed using command-line pipelines
+
+This reflects standard bioinformatics practices used in real-world research environments.
+
+---
+
 ## Methodology
 
-### 1. Data Retrieval
+### 1. Data Retrieval (SRA Toolkit)
 
 * Raw sequencing data was obtained from the NCBI Sequence Read Archive (SRA)
-* Data was downloaded using `prefetch` and converted to FASTQ format using `fasterq-dump`
-* Structured directory organization ensured reproducibility
+* Data downloaded using `prefetch`
+* Converted `.sra` files into FASTQ format using `fasterq-dump`
+* Organized into structured directories for reproducibility
 
 ---
 
@@ -42,32 +56,32 @@ The pipeline integrates data acquisition, quality assessment, preprocessing, and
 **Observation:**
 
 * Decline in read quality towards the 3’ end
-* Presence of sequencing biases and potential adapter contamination
+* Presence of sequencing bias and adapter contamination
 
 ---
 
 ### 3. Preprocessing (Trimmomatic)
 
 * Removed adapter sequences
-* Trimmed low-quality bases from reads
+* Trimmed low-quality bases
 * Filtered poor-quality reads
 
 **Result:**
 
 * Improved base quality across reads
 * Reduction in noise and technical artifacts
-* Enhanced suitability for downstream analysis
+* Enhanced data quality for downstream analysis
 
 ---
 
 ### 4. Differential Expression Analysis (DESeq2)
 
-* Imported count matrix and sample metadata
+* Loaded count matrix and sample metadata
 * Preprocessed data:
 
   * Removed genes with zero counts
   * Handled missing values appropriately
-* Constructed DESeq2 dataset with condition-based design
+* Constructed DESeq2 dataset with design: `~ condition`
 * Performed:
 
   * Normalization of counts
@@ -102,16 +116,13 @@ Genes were classified based on statistical thresholds:
 
 * **Volcano Plot**
 
-  * Displays significance vs fold change
-  * Highlights significantly regulated genes
-
+  * Displays statistical significance vs fold change
 * **Principal Component Analysis (PCA)**
 
-  * Demonstrates variance and clustering between samples
-
+  * Shows clustering and variance between samples
 * **Heatmap**
 
-  * Shows gene expression patterns across conditions
+  * Visualizes expression patterns across conditions
 
 ---
 
@@ -119,13 +130,14 @@ Genes were classified based on statistical thresholds:
 
 * Clear separation between biological conditions observed in PCA
 * Identification of statistically significant gene expression changes
-* Improved data quality post preprocessing directly enhanced analysis reliability
-* Visualization confirmed biologically meaningful clustering and expression patterns
+* Improved data quality after preprocessing significantly enhanced analysis reliability
+* Visualization confirmed meaningful clustering and gene expression patterns
 
 ---
 
 ## Tools and Technologies
 
+* Linux (Command-line environment)
 * SRA Toolkit
 * FastQC
 * Trimmomatic
@@ -137,7 +149,7 @@ Genes were classified based on statistical thresholds:
 
 * Structured pipeline ensures reproducibility
 * Standard bioinformatics tools and statistical methods used
-* All intermediate and final outputs documented
+* Clear workflow from raw data to final results
 
 ---
 
@@ -152,9 +164,8 @@ This project demonstrates:
 
 ---
 
-
 ## Future Scope
 
-* Integration with multi-omics datasets (genomics + proteomics)
+* Integration with multi-omics datasets
 * Network-based analysis of DEGs
 * Functional enrichment and pathway analysis
