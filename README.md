@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project presents a complete, reproducible RNA-seq analysis , starting from raw sequencing data retrieval to statistically robust identification of differentially expressed genes (DEGs).
+This project presents a complete, reproducible RNA-seq analysis workflow, starting from raw sequencing data retrieval to statistically robust identification of differentially expressed genes (DEGs).
 
 The pipeline integrates data acquisition, quality assessment, preprocessing, and differential expression analysis to extract biologically meaningful insights from high-throughput sequencing data.
 
